@@ -7,9 +7,4 @@
 #game-screen {
     position: relative;
     overflow: hidden;
-    background-image: url('../img/dungeon.jpg');
-    background-color: aqua;
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
 }
