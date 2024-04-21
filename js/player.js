@@ -6,7 +6,7 @@ class Player {
         this.gameScreen = gameScreen
 
         this.playerSize = {
-            w: 65,
+            w: 30,
             h: 65,
         }
 
@@ -21,14 +21,16 @@ class Player {
 
 
     init() {
-        this.playerOne = document.createElement('div');
+        this.playerOne = document.createElement('div')
         this.playerOne.style.position = "absolute"
-        this.playerOne.style.backgroundColor = 'pink'
+        this.playerOne.style.backgroundColor = 'purple'
 
         this.playerOne.style.width = `${this.playerSize.w}px`
         this.playerOne.style.height = `${this.playerSize.h}px`
         this.playerOne.style.left = `${this.playerPos.left}px`
         this.playerOne.style.top = `${this.playerPos.top}px`
+
+        document.querySelector('#game-screen').appendChild(this.playerOne)
     }
 
     move() {

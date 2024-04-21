@@ -6,7 +6,7 @@ class StepSquare {
 
         this.stepSquareSize = {
             w: 75,
-            h: 75, 
+            h: 75,
         }
 
         this.stepSquarePos = {
@@ -18,11 +18,9 @@ class StepSquare {
             nameEnemy: nameEnemy,
             imgEnemy: imgEnemy,
             helthEnemy: helthEnemy,
-
-
         }
-        this.init()
 
+        this.init()
     }
 
     init() {

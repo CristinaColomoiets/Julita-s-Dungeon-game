@@ -6,11 +6,12 @@ const Game = {
         h: window.innerHeight,
     },
 
-    //background: undefined,
+    background: undefined,
     //speedPlayerCounter: 0,
     player: undefined,
+    dice: undefined,
     //gamePath: undefined,
-    stepSquare: undefined,
+    //stepSquare: undefined,
 
     init() {
         this.setGameScreenSize();
@@ -24,6 +25,15 @@ const Game = {
     },
 
     createElement() {
+
+        this.background = new Background(this.gameScreen, this.gameSize)
+
+        this.player = new Player(this.gameSize, this.gameScreen, 150, 350)
+
+        this.dice = new Dice(this.gameSize, this.gameScreen, 125, 650)
+
+
+
         const stepSquare1 = new StepSquare(this.gameSize, 350, 250)
 
         const stepSquarePosLeft = stepSquare1.stepSquarePos.left
@@ -35,7 +45,7 @@ const Game = {
         const stepSquare4 = new StepSquare(this.gameSize, stepSquarePosLeft, stepSquare3.stepSquarePos.top - stepSquareHeight - 1)
         const stepSquare5 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth + 1, stepSquare4.stepSquarePos.top)
 
-        const player = new Player(this.gameSize, this.gameScreen, 200, 200)
+
 
 
 
