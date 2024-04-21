@@ -15,6 +15,7 @@ class Player {
             top: topValue
         }
 
+        this.playerImg = undefined
         this.init()
 
     }
@@ -24,6 +25,11 @@ class Player {
         this.playerOne = document.createElement('div')
         this.playerOne.style.position = "absolute"
         this.playerOne.style.backgroundColor = 'purple'
+
+        this.playerOne.style.backgroundImage = `url(${this.playerImg})`
+        this.playerOne.style.backgroundSize = "cover"
+        this.playerOne.style.backgroundPosition = "center"
+        this.playerOne.style.backgroundRepeat = "no-repeat"
 
         this.playerOne.style.width = `${this.playerSize.w}px`
         this.playerOne.style.height = `${this.playerSize.h}px`

@@ -7,9 +7,12 @@ const Game = {
     },
 
     background: undefined,
-    //speedPlayerCounter: 0,
-    player: undefined,
+    dicePad: undefined,
+    //speedPlayerCounter: 0, 
     dice: undefined,
+    player: undefined,
+
+
     //gamePath: undefined,
     //stepSquare: undefined,
 
@@ -29,6 +32,8 @@ const Game = {
         this.background = new Background(this.gameScreen, this.gameSize) //if this.background isnt in the top, it can delete other instances
 
         this.player = new Player(this.gameSize, this.gameScreen, 150, 350)
+
+        this.dicePad = new DicePad(this.gameSize, this.gameScreen, 100, 600)
 
         this.dice = new Dice(this.gameSize, this.gameScreen, 125, 650)
 

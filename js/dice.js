@@ -15,7 +15,7 @@ class Dice {
             top: topValue
         }
 
-        this.rootImgDice = "../img/dungeon.jpg"
+        this.rootImgDice = "../img/dice1.png"
 
         // function randomNumberDice() {
         //     let randomNumber = Math.random()
@@ -30,7 +30,7 @@ class Dice {
     init() {
         this.diceOne = document.createElement('div')
         this.diceOne.style.position = "absolute"
-        this.diceOne.style.backgroundColor = 'blue'
+
 
         this.diceOne.style.backgroundImage = `url(${this.rootImgDice})`
         this.diceOne.style.backgroundSize = "cover"
@@ -46,6 +46,7 @@ class Dice {
     }
 
 }
+
 
 
 // const a_imgDice = [] //index 6
