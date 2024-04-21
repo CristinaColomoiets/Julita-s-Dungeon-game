@@ -26,13 +26,13 @@ const Game = {
 
     createElement() {
 
-        this.background = new Background(this.gameScreen, this.gameSize)
+        this.background = new Background(this.gameScreen, this.gameSize) //if this.background isnt in the top, it can delete other instances
 
         this.player = new Player(this.gameSize, this.gameScreen, 150, 350)
 
         this.dice = new Dice(this.gameSize, this.gameScreen, 125, 650)
 
-
+        // WE NEED TO CREATE A DIV TO MAKE THE PATH INSIDE
 
         const stepSquare1 = new StepSquare(this.gameSize, 350, 250)
 

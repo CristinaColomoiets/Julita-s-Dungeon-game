@@ -21,7 +21,6 @@ class Background {
 
         this.backgroundImg = document.createElement('img')
         this.backgroundImg.src = '../img/dungeon.jpg'
-        //this.backgroundImg.style.
         this.backgroundImg.style.position = "absolute"
 
         this.backgroundImg.style.width = `${this.backgroundSize.w}px`
