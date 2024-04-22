@@ -60,13 +60,12 @@ const Game = {
                     this.stepSquare49,
                     this.stepSquare50,
                     this.stepSquare51 ],
-
-
-    init() {
+                    
+    init() {             
         this.setGameScreenSize()
         this.createElements()
-        this.setEventListeners()
-        
+        this.setEventListeners()            
+        console.log('Array de casillas: ', this.arrSquaresPath[1]);
     },
 
     setGameScreenSize() {
