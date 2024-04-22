@@ -15,7 +15,7 @@ class Dice {
             top: topValue
         }
 
-        this.rootImgDice = "../img/dice1.png"
+        this.rootImgDice = "../img/diceImages/dice1.png"
 
         // function randomNumberDice() {
         //     let randomNumber = Math.random()
@@ -42,7 +42,7 @@ class Dice {
         this.diceOne.style.left = `${this.dicePos.left}px`
         this.diceOne.style.top = `${this.dicePos.top}px`
 
-        document.querySelector('#game-screen').appendChild(this.diceOne)
+        document.querySelector('#controls').appendChild(this.diceOne)
     }
 
 }
