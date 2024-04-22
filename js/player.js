@@ -15,7 +15,8 @@ class Player {
             top: topValue
         }
 
-        this.playerImg = "../img/julita.jpg"
+        this.playerImg = undefined
+
         this.init()
 
     }
@@ -36,10 +37,23 @@ class Player {
         this.playerOne.style.left = `${this.playerPos.left}px`
         this.playerOne.style.top = `${this.playerPos.top}px`
 
-        document.querySelector('#game-screen').appendChild(this.playerOne)
+        document.querySelector('#panel').appendChild(this.playerOne)
     }
+
 
     move() {
+        this.updatePosition()
+    }
+
+    updatePosition() {
+        this.playerOne.style.top = `${this.playerPos.top}px`
 
     }
+
+    moveToThisTop(pixels) {
+        this.playerPos.top += pixels
+        this.updatePosition()
+    }
+
+
 }

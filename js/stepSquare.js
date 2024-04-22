@@ -1,24 +1,23 @@
 class StepSquare {
 
-    constructor(gameSize, leftValue, topValue, nameEnemy, imgEnemy, helthEnemy) {
+    constructor(gameSize, leftValue, topValue, typeSquare, sizeType = 'standard' ) {
 
         this.gameSize = gameSize
-
-        this.stepSquareSize = {
-            w: 75,
-            h: 75,
-        }
 
         this.stepSquarePos = {
             left: leftValue,
             top: topValue
         }
 
-        this.enemyClass = {
-            nameEnemy: nameEnemy,
-            imgEnemy: imgEnemy,
-            helthEnemy: helthEnemy,
+        this.typeSquare = undefined
+        
+        this.stepSquareSize = {
+            w: sizeType === 'standard' ? 75 : 150,
+            h: sizeType === 'standard' ? 75 : 150
         }
+
+        this.sizeType = sizeType
+
 
         this.init()
     }
@@ -27,7 +26,7 @@ class StepSquare {
 
         this.oneStepSquare = document.createElement('div');
         this.oneStepSquare.style.position = "absolute"
-        this.oneStepSquare.style.backgroundColor = 'aqua'
+        this.oneStepSquare.style.backgroundColor = '#0097B2'
         this.oneStepSquare.style.borderRadius = `5px`
 
         this.oneStepSquare.style.width = `${this.stepSquareSize.w}px`
@@ -36,6 +35,6 @@ class StepSquare {
         this.oneStepSquare.style.top = `${this.stepSquarePos.top}px`
 
 
-        document.querySelector('#game-screen').appendChild(this.oneStepSquare) // Preguntar como podemos pasar la variable 'gameScreen'.
+        document.querySelector('#panel').appendChild(this.oneStepSquare) // Preguntar como podemos pasar la variable 'gameScreen'.
     }
 }
