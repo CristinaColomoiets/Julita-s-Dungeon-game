@@ -55,5 +55,8 @@ class Player {
         this.updatePosition()
     }
 
+    //obtain coords to positionate Julita in each square
+    //updatePosition returns the new position in the array
+    //search the way to obtain that position from the parent
 
 }
