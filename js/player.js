@@ -41,19 +41,22 @@ class Player {
     }
 
 
-    move(){
+    move() {
         this.updatePosition()
     }
-    
-    updatePosition(){
+
+    updatePosition() {
         this.playerOne.style.top = `${this.playerPos.top}px`
 
     }
-    
-    moveToThisTop(pixels){  
+
+    moveToThisTop(pixels) {
         this.playerPos.top += pixels
         this.updatePosition()
     }
 
+    //obtain coords to positionate Julita in each square
+    //updatePosition returns the new position in the array
+    //search the way to obtain that position from the parent
 
 }
