@@ -26,7 +26,7 @@ class StepSquare {
 
         this.oneStepSquare = document.createElement('div');
         this.oneStepSquare.style.position = "absolute"
-        this.oneStepSquare.style.backgroundColor = 'aqua'
+        this.oneStepSquare.style.backgroundColor = '#0097B2'
         this.oneStepSquare.style.borderRadius = `5px`
 
         this.oneStepSquare.style.width = `${this.stepSquareSize.w}px`
