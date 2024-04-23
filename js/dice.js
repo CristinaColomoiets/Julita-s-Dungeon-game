@@ -6,8 +6,8 @@ class Dice {
         this.gameScreen = gameScreen
 
         this.diceSize = {
-            w: 80,
-            h: 80,
+            w: 120,
+            h: 120,
         }
 
         this.dicePos = {

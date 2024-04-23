@@ -1,6 +1,6 @@
 class StepSquare {
 
-    constructor(gameSize, leftValue, topValue, typeSquare, sizeType = 'standard') {
+    constructor(gameSize, leftValue, topValue, typeSquare, backgroundImage, sizeType = 'standard') {
 
         this.gameSize = gameSize
 
@@ -9,7 +9,7 @@ class StepSquare {
             top: topValue
         }
 
-        this.typeSquare = undefined
+        this.typeSquare = typeSquare
 
         this.stepSquareSize = {
             w: sizeType === 'standard' ? 75 : 150,
@@ -17,6 +17,8 @@ class StepSquare {
         }
 
         this.sizeType = sizeType
+
+        this.backgroundImage = backgroundImage
 
         this.init()
     }
@@ -26,6 +28,10 @@ class StepSquare {
         this.oneStepSquare = document.createElement('div');
         this.oneStepSquare.style.position = "absolute"
         this.oneStepSquare.style.backgroundColor = '#0097B2'
+        this.oneStepSquare.style.backgroundImage = `url(${this.backgroundImage})`
+        this.oneStepSquare.style.backgroundSize = "50%"
+        this.oneStepSquare.style.backgroundPosition = "center"
+        this.oneStepSquare.style.backgroundRepeat = "no-repeat"
         this.oneStepSquare.style.borderRadius = `5px`
 
         this.oneStepSquare.style.width = `${this.stepSquareSize.w}px`

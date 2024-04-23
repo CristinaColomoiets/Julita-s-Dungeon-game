@@ -6,8 +6,8 @@ class Player {
         this.gameScreen = gameScreen
 
         this.playerSize = {
-            w: 30,
-            h: 65,
+            w: 40,
+            h: 80,
         }
 
         this.playerPos = {
@@ -15,7 +15,7 @@ class Player {
             top: topValue,
         }
 
-        this.playerImg = undefined
+        this.playerImg = "../img/Julita.gif"
 
         this.init()
 
@@ -25,7 +25,7 @@ class Player {
     init() {
         this.playerOne = document.createElement('div')
         this.playerOne.style.position = "absolute"
-        this.playerOne.style.backgroundColor = 'purple'
+        //this.playerOne.style.backgroundColor = 'purple'
 
         this.playerOne.style.backgroundImage = `url(${this.playerImg})`
         this.playerOne.style.backgroundSize = "cover"
@@ -49,7 +49,7 @@ class Player {
     }
 
     moveToSquare(targetSquare) {
-        console.log('DEBEMOS MOVERLA A EST SQUARE', targetSquare)
+        console.log('DEBEMOS MOVERLA A ESTE SQUARE', targetSquare)
     }
 
     //updatePosition returns the new position in the array
