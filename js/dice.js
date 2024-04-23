@@ -16,12 +16,12 @@ class Dice {
         }
 
         this.totalItems = 6
-        this.currentNum = 1
+        this.currentNum = 0
 
         this.init()
     }
 
-        
+
     init() {
         this.diceOne = document.createElement('div')
         this.diceOne.id = "dice"
@@ -38,40 +38,13 @@ class Dice {
 
         document.querySelector('#controls').appendChild(this.diceOne)
     }
-    
-    generateRandomDice(){
+
+    generateRandomDice() {
         this.currentNum = Math.floor(Math.random() * this.totalItems)
-        this.updateImage() 
+        this.updateImage()
     }
-    
-    updateImage(){
+
+    updateImage() {
         this.diceOne.style.backgroundImage = `url(../img/diceImages/dice${this.currentNum + 1}.png)`
     }
 }
-
-
-
-
-
-
-
-
-
-// function randomNumberDice() {
-    // let randomNumber = Math.random()
-    // let randomScaled = randomNumber * 6
-    // let randomRound = Math.floor(randomScaled)
-    // return randomRound
-//}
-
-        
-// const a_imgDice = [] //index 6
-
-// function diceRolling(rollNum) {
-//     for (let i = 1; i <= rollNum; i++) {
-
-//         let randomIndexDice = 0
-//         Math.random()
-
-//     }
-// }

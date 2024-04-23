@@ -1,6 +1,6 @@
 class StepSquare {
 
-    constructor(gameSize, leftValue, topValue, typeSquare, sizeType = 'standard' ) {
+    constructor(gameSize, leftValue, topValue, typeSquare, sizeType = 'standard') {
 
         this.gameSize = gameSize
 
@@ -10,14 +10,13 @@ class StepSquare {
         }
 
         this.typeSquare = undefined
-        
+
         this.stepSquareSize = {
             w: sizeType === 'standard' ? 75 : 150,
             h: sizeType === 'standard' ? 75 : 150
         }
 
         this.sizeType = sizeType
-
 
         this.init()
     }
@@ -33,6 +32,7 @@ class StepSquare {
         this.oneStepSquare.style.height = `${this.stepSquareSize.h}px`
         this.oneStepSquare.style.left = `${this.stepSquarePos.left}px`
         this.oneStepSquare.style.top = `${this.stepSquarePos.top}px`
+        this.oneStepSquare.style.zIndex = "10"
 
 
         document.querySelector('#panel').appendChild(this.oneStepSquare) // Preguntar como podemos pasar la variable 'gameScreen'.

@@ -13,9 +13,10 @@
 #panel {
     position: relative;
     overflow: hidden;
-    background-color: rgb(30, 2, 2);
+    /* background-color: rgb(30, 2, 2); */
 }
 
 #controls {
-    background-color: green;
+    /* background-color: green; */
+
 }

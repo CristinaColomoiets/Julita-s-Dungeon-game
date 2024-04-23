@@ -12,7 +12,7 @@ class Player {
 
         this.playerPos = {
             left: leftValue,
-            top: topValue
+            top: topValue,
         }
 
         this.playerImg = undefined
@@ -36,27 +36,22 @@ class Player {
         this.playerOne.style.height = `${this.playerSize.h}px`
         this.playerOne.style.left = `${this.playerPos.left}px`
         this.playerOne.style.top = `${this.playerPos.top}px`
+        this.playerOne.style.zIndex = "12"
+
 
         document.querySelector('#panel').appendChild(this.playerOne)
     }
 
-
-    move() {
-        this.updatePosition()
-    }
-
-    updatePosition() {
-        this.playerOne.style.top = `${this.playerPos.top}px`
+    updatePosition(positionL, positionT) {
+        this.playerOne.style.left = `${positionL}px`
+        this.playerOne.style.top = `${positionT}px`
 
     }
 
-    moveToThisTop(pixels) {
-        this.playerPos.top += pixels
-        this.updatePosition()
+    moveToSquare(targetSquare) {
+        console.log('DEBEMOS MOVERLA A EST SQUARE', targetSquare)
     }
 
-    //obtain coords to positionate Julita in each square
     //updatePosition returns the new position in the array
-    //search the way to obtain that position from the parent
 
 }
