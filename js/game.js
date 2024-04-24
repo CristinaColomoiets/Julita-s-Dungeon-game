@@ -46,7 +46,7 @@ const Game = {
                 this.player.updatePosition(this.targetSquare.stepSquarePos.left, this.targetSquare.stepSquarePos.top)
 
                 if (this.targetSquare.typeSquare === "moveTwo") {
-                    this.currentSquareNumber += 2
+                    this.currentSquareNumber -= 2
                     this.clueLabel.showMessage('mueve dos casillas')
                 }
 
@@ -58,10 +58,11 @@ const Game = {
             } else {
                 this.dice.generateRandomDice()
 
-                if (this.dice.currentNum + 1 >= 3) {
+                if (this.dice.currentNum + 1 >= 4) {
+                    //alert('el monstruo ha muerto')
                     console.log('El monstruo está muerto. le has matado con número: ', this.dice.currentNum + 1)
                     this.attackMode = false
-                } else{
+                } else {
                     console.log('El monstruo está ALIVE', this.dice.currentNum + 1)
                     this.clueLabel.showMessage('No está muerto todavía, sigue tirando porfavor')
                 }
@@ -72,10 +73,10 @@ const Game = {
                 if (this.dice.currentNum + 1 >= 6) {
                     this.clueLabel.showMessage(`El BOSS está muerto. le has matado con número:',
                     ${this.dice.currentNum + 1}, youwin`)
-                } else if(this.dice.currentNum + 1 === 1){
+                } else if (this.dice.currentNum + 1 === 1) {
+                    //alert('pazdescanse Julita')
                     this.clueLabel.showMessage('Pazdescanse Julita, lo siento')
-
-                }else{
+                } else {
                     console.log('El BOSS sigue ALIVE', this.dice.currentNum + 1)
                     this.clueLabel.showMessage('No está muerto todavía, sigue tirando porfavor')
                 }
@@ -84,13 +85,13 @@ const Game = {
             this.updateStats()
         }
     },
-    
-    
+
+
     updateStats() {
         if (this.targetSquare.typeSquare === "finalBoss") { // La casilla del BOSS final
             if (this.dice.currentNum + 1 >= 6) {
                 this.clueLabel.showMessage(`El BOSS está muerto. le has matado con número:', ${this.dice.currentNum + 1}, youwin`)
-            } else{
+            } else {
                 console.log('El BOSS sigue ALIVE', this.dice.currentNum + 1)
                 this.clueLabel.showMessage('No está muerto todavía, sigue tirando porfavor')
             }
@@ -108,10 +109,10 @@ const Game = {
         } else if (((this.currentSquareNumber + 1) + this.dice.currentNum) > (this.arrSquaresPath.length - 2)) {
             this.currentSquareNumber = this.arrSquaresPath.length - 2
             this.targetSquare = this.arrSquaresPath[this.arrSquaresPath.length - 2]
-        
-        } 
+
+        }
         this.player.moveToSquare(this.targetSquare)
-    
+
     },
 
     createBar() {
@@ -164,14 +165,14 @@ const Game = {
         const stepSquare33 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 6 + 6, 'moveTwo', '../img/Two.png')
         const stepSquare34 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 5 + 5, 'mana', '../img/manaPotion.png')
         const stepSquare35 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 4 + 4, 'monster', '../img/vampire.gif')
-        const stepSquare36 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 3 + 3, 'sword', '../img/sword.gif')
+        const stepSquare36 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 3 + 3, 'sword', '../img/sword.png')
         const stepSquare37 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'moveTwo', '../img/Two.png')
 
         const stepSquare38 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 3 + 3, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'monster', '../img/minotaur.png')
         const stepSquare39 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 4 + 4, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'bright', '../img/bright.gif')
         const stepSquare40 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 5 + 5, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'health', '../img/health.gif')
         const stepSquare41 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 6 + 6, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'rip', '../img/rip.png')
-        const stepSquare42 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 7 + 7, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'sword', '../img/sword.png')
+        const stepSquare42 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 7 + 7, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'monster', '../img/vampire.gif')
         const stepSquare43 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 8 + 8, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'health', '../img/health.gif')
         const stepSquare44 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 9 + 9, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'mana', '../img/manaPotion.png')
         const stepSquare45 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 10 + 10, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'shield', '../img/shield.png')

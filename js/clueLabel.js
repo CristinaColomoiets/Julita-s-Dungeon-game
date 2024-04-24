@@ -46,14 +46,14 @@ class ClueLabel {
         document.querySelector('#controls').appendChild(this.label)
     }
 
-    showMessage(message){
+    showMessage(message) {
         this.label.innerText = message
-        console.log(message) 
+        console.log(message)
     }
 
-    messageFinal(message){
+    messageFinal(message) {
         this.label.innerText = message
-        console.log(message) 
+        console.log(message)
     }
 
 
