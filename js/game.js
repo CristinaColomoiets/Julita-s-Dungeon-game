@@ -36,44 +36,62 @@ const Game = {
 
     setEventListeners() {
         document.querySelector('#dice').onclick = () => {
-            if (this.attackMode === false) {
+            if (!this.attackMode) {
                 this.dice.generateRandomDice()
                 this.advancePlayer()
                 this.player.updatePosition(this.targetSquare.stepSquarePos.left, this.targetSquare.stepSquarePos.top)
-                this.updateStats()
-            } else if (this.attackMode === true) {
+            } else {
                 if (this.dice.generateRandomDice() >= 3) {
                     alert('El monstro está muerto')
+                    this.attackMode = false
                 } else {
                     alert('Sigue tirando')
                 }
             }
+            this.updateStats()
         }
     },
 
     updateStats() {
         if (this.player.playerPos === this.targetSquare && this.targetSquare.typeSquare === "moveTwo") {
-            this.player.moveToSquare(this.targetSquare += 2)
+            this.player.moveToSquare()
+            this.movetwo()
             alert(' está en la casilla +2')
         }
 
-        if (this.player.playerPos === this.targetSquare.typeSquare === "monster") {
+        if (this.targetSquare.typeSquare === "monster") {
             this.attackMode === true
             this.healthBar.barSize.w -= "3%"
+            //por qué nos está saliendo alert antes de advancePlayer()? compila antes que el resto de acciones
             alert('Estás contra un monstro, debes tirar el dado para luchar')
 
         }
 
-        if (this.player.playerPos === this.targetSquare.typeSquare !== "monster" || this.player.playerPos === this.targetSquare.typeSquare !== "moveTwo") {
+        if (this.targetSquare.typeSquare !== "monster" || this.targetSquare.typeSquare !== "moveTwo") {
             //alert('Tira otra vez')
         }
+    },
 
+    moveTwo() {
+        this.player.moveToSquare(2)
     },
 
     advancePlayer() {
-        this.currentSquareNumber += this.dice.currentNum + 1
-        this.targetSquare = this.arrSquaresPath[this.currentSquareNumber]
+
+        console.log(this.currentSquareNumber)
+        console.log(this.dice.currentNum)
+        if (((this.currentSquareNumber + 1) + this.dice.currentNum) <= (this.arrSquaresPath.length - 2)) {
+            this.currentSquareNumber += this.dice.currentNum + 1
+            this.targetSquare = this.arrSquaresPath[this.currentSquareNumber]
+            console.log("a")
+
+        } else if (((this.currentSquareNumber + 1) + this.dice.currentNum) > (this.arrSquaresPath.length - 2)) {
+            this.currentSquareNumber = this.arrSquaresPath.length - 2
+            this.targetSquare = this.arrSquaresPath[this.arrSquaresPath.length - 2]
+            console.log("b")
+        }
         this.player.moveToSquare(this.targetSquare)
+        //console.log("c")
     },
 
     createBar() {
