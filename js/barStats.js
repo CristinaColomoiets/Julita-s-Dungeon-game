@@ -41,11 +41,3 @@ class BarStats {
     }
 
 }
-
-
-// const totalQuestions = quiz.questions.length
-// let currentQuestion = quiz.currentQuestionIndex
-
-// const percentage = (currentQuestion / totalQuestions) * 100
-
-// progressBar.style.width = `${percentage}%`

@@ -49,9 +49,7 @@ class Player {
     }
 
     moveToSquare(targetSquare) {
-        console.log('DEBEMOS MOVERLA A ESTE SQUARE', targetSquare)
+        
+        // console.log('DEBEMOS MOVERLA A ESTE SQUARE', targetSquare)
     }
-
-    //updatePosition returns the new position in the array
-
 }

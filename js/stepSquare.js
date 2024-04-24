@@ -29,7 +29,7 @@ class StepSquare {
         this.oneStepSquare.style.position = "absolute"
         this.oneStepSquare.style.backgroundColor = '#0097B2'
         this.oneStepSquare.style.backgroundImage = `url(${this.backgroundImage})`
-        this.oneStepSquare.style.backgroundSize = "50%"
+        this.oneStepSquare.style.backgroundSize = "60%"
         this.oneStepSquare.style.backgroundPosition = "center"
         this.oneStepSquare.style.backgroundRepeat = "no-repeat"
         this.oneStepSquare.style.borderRadius = `5px`
