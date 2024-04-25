@@ -86,14 +86,14 @@ const Game = {
                 this.loser.style.display = 'block'
             }
 
-            // if (this.healthBar.barSize.w === 50) {
-            //     this.clueLabel.showMessage('No puedes ni arrastrarte. Has muerto')
-            //     this.loser.style.display = 'block'
-        }
 
-        if (this.targetSquare.typeSquare === "mana") {
-            this.manaBar.updateMana()
-            console.log('Es barra de mana: ', this.manaBar)
+            if (this.targetSquare.typeSquare === "mana") {
+                this.manaBar.updateMana()
+                console.log('Es barra de mana: ', this.manaBar)
+            }
+
+
+
         }
 
         if (this.targetSquare.typeSquare === "health") {
