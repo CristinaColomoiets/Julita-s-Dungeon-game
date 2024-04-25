@@ -28,14 +28,6 @@ class BarStats {
     }
 
     init() {
-        // this.container = document.createElement('div')
-        // this.container.style.display = 'flex'
-
-        // this.txtBar = document.createElement('p')
-        // this.txtBar.innerText = titleBar
-        // this.txtBar.color = 'white'
-        // this.txtBar.fontSize = '20px'
-        // this.label.style.textShadow = '8px 8px 8px rgba(0, 0, 0, 0.5)'
 
 
         this.bar = document.createElement('div')
@@ -50,9 +42,6 @@ class BarStats {
         this.bar.style.left = `${this.barPosition.left}px`
         this.bar.style.top = `${this.barPosition.top}px`
         this.bar.style.zIndex = "13"
-
-        // this.container.appendChild(txtBar)
-        // this.container.appendChild(bar)
 
 
         document.querySelector('#panel').appendChild(this.bar)
@@ -73,7 +62,7 @@ class BarStats {
     }
 
     updateMana() {
-        this.currentWidth += 3
+        this.currentWidth += 4
         if (this.currentWidth > 60) {
             this.currentWidth = 60
         }
