@@ -36,12 +36,12 @@ class ClueLabel {
         this.label.style.left = `${this.labelPos.left}px`
         this.label.style.top = `${this.labelPos.top}px`
         this.label.style.zIndex = '12'
-        this.label.style.textAlign = 'center'
-        // this.label.style.color = 'white'
-        this.label.style.fontSize = '25' // no se cambia el tamaño
+        // this.label.style.textAlign = 'center'
+        this.label.style.color = 'white'
+        this.label.style.fontSize = '25px'
         this.label.style.fontWeight = '800'
 
-        this.label.style.padding = '16'
+        this.label.style.padding = '25px'
 
         document.querySelector('#controls').appendChild(this.label)
     }

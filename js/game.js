@@ -120,6 +120,11 @@ const Game = {
         this.manaBar = new BarStats(this.gameSize, this.gameScreen, "mana", "#8EE3FF", 650)
     },
 
+    // createEndGAme() {
+    //     this.winner =
+    //         this.loser = 
+    // },
+
     createSquares() {
 
         const stepSquare1 = new StepSquare(this.gameSize, 100, 275)
@@ -128,17 +133,17 @@ const Game = {
         const stepSquareHeight = stepSquare1.stepSquareSize.h
         const stepSquareWidth = stepSquare1.stepSquareSize.w
 
-        const stepSquare2 = new StepSquare(this.gameSize, stepSquarePosLeft, stepSquare1.stepSquarePos.top - stepSquareHeight - 1, 'moveTwo', '../img/Two.png')
+        const stepSquare2 = new StepSquare(this.gameSize, stepSquarePosLeft, stepSquare1.stepSquarePos.top - stepSquareHeight - 1, 'moveTwo', '../img/24.png')
         const stepSquare3 = new StepSquare(this.gameSize, stepSquarePosLeft, stepSquare2.stepSquarePos.top - stepSquareHeight - 1, 'monster', '../img/minotaur.png')
         const stepSquare4 = new StepSquare(this.gameSize, stepSquarePosLeft, stepSquare3.stepSquarePos.top - stepSquareHeight - 1, 'mana', '../img/manaPotion.png')
-        const stepSquare5 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth + 1, stepSquare4.stepSquarePos.top, 'moveTwo', '../img/Two.png')
+        const stepSquare5 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth + 1, stepSquare4.stepSquarePos.top, 'moveTwo', '../img/24.png')
         const stepSquare6 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare5.stepSquarePos.top, 'shield', '../img/shield.png')
         const stepSquare7 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 3 + 3, stepSquare6.stepSquarePos.top, 'health', '../img/health.gif')
         const stepSquare8 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 4 + 4, stepSquare7.stepSquarePos.top, 'monster', '../img/minotaur.png')
         const stepSquare9 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 5 + 5, stepSquare8.stepSquarePos.top, 'bright', '../img/bright.gif')
         const stepSquare10 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 6 + 6, stepSquare9.stepSquarePos.top, 'sword', '../img/sword.png')
         const stepSquare11 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 7 + 7, stepSquare10.stepSquarePos.top, 'health', '../img/health.gif')
-        const stepSquare12 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 8 + 8, stepSquare11.stepSquarePos.top, 'moveTwo', '../img/Two.png')
+        const stepSquare12 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 8 + 8, stepSquare11.stepSquarePos.top, 'moveTwo', '../img/24.png')
         const stepSquare13 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 9 + 9, stepSquare12.stepSquarePos.top, 'monster', '../img/minotaur.png')
         const stepSquare14 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 10 + 10, stepSquare13.stepSquarePos.top, 'mana', '../img/manaPotion.png')
         const stepSquare15 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 11 + 11, stepSquare14.stepSquarePos.top, 'mana', '../img/manaPotion.png')
@@ -146,7 +151,7 @@ const Game = {
         const stepSquare17 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 12 + 12, stepSquare16.stepSquarePos.top + stepSquareHeight + 1, 'shield', '../img/shield.png')
         const stepSquare18 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 12 + 12, stepSquare17.stepSquarePos.top + stepSquareHeight + 1, 'monster', '../img/minotaur.png')
         const stepSquare19 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 12 + 12, stepSquare18.stepSquarePos.top + stepSquareHeight + 1, 'mana', '../img/manaPotion.png')
-        const stepSquare20 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 12 + 12, stepSquare19.stepSquarePos.top + stepSquareHeight + 1, 'moveTwo', '../img/Two.png')
+        const stepSquare20 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 12 + 12, stepSquare19.stepSquarePos.top + stepSquareHeight + 1, 'moveTwo', '../img/24.png')
         const stepSquare21 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 12 + 12, stepSquare20.stepSquarePos.top + stepSquareHeight + 1, 'monster', '../img/vampire.gif')
         const stepSquare22 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 12 + 12, stepSquare21.stepSquarePos.top + stepSquareHeight + 1, 'monster', '../img/minotaur.png')
 
@@ -158,15 +163,15 @@ const Game = {
         const stepSquare27 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 7 + 7, stepSquare14.stepSquarePos.top + stepSquareWidth * 6 + 6, 'monster', '../img/minotaur.png')
         const stepSquare28 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 6 + 6, stepSquare14.stepSquarePos.top + stepSquareWidth * 6 + 6, 'health', '../img/health.gif')
         const stepSquare29 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 5 + 5, stepSquare14.stepSquarePos.top + stepSquareWidth * 6 + 6, 'shield', '../img/shield.png')
-        const stepSquare30 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 4 + 4, stepSquare14.stepSquarePos.top + stepSquareWidth * 6 + 6, 'moveTwo', '../img/Two.png')
+        const stepSquare30 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 4 + 4, stepSquare14.stepSquarePos.top + stepSquareWidth * 6 + 6, 'moveTwo', '../img/24.png')
         const stepSquare31 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 3 + 3, stepSquare14.stepSquarePos.top + stepSquareWidth * 6 + 6, 'sword', '../img/sword.png')
         const stepSquare32 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare14.stepSquarePos.top + stepSquareWidth * 6 + 6, 'monster', '../img/minotaur.png')
 
-        const stepSquare33 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 6 + 6, 'moveTwo', '../img/Two.png')
+        const stepSquare33 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 6 + 6, 'moveTwo', '../img/24.png')
         const stepSquare34 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 5 + 5, 'mana', '../img/manaPotion.png')
         const stepSquare35 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 4 + 4, 'monster', '../img/vampire.gif')
         const stepSquare36 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 3 + 3, 'sword', '../img/sword.png')
-        const stepSquare37 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'moveTwo', '../img/Two.png')
+        const stepSquare37 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 2 + 2, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'moveTwo', '../img/24.png')
 
         const stepSquare38 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 3 + 3, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'monster', '../img/minotaur.png')
         const stepSquare39 = new StepSquare(this.gameSize, stepSquarePosLeft + stepSquareWidth * 4 + 4, stepSquare6.stepSquarePos.top + stepSquareWidth * 2 + 2, 'bright', '../img/bright.gif')
