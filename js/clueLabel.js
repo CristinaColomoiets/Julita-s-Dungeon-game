@@ -23,9 +23,8 @@ class ClueLabel {
 
     init() {
         this.label = document.createElement('div')
-        // this.label.id = "clueLabel"
         this.label.style.position = "absolute"
-        // this.label.style.backgroundColor = "red"
+
         this.label.style.backgroundImage = `url(${this.labelImage})`
         this.label.style.backgroundSize = "cover"
         this.label.style.backgroundPosition = "center"
@@ -36,10 +35,10 @@ class ClueLabel {
         this.label.style.left = `${this.labelPos.left}px`
         this.label.style.top = `${this.labelPos.top}px`
         this.label.style.zIndex = '12'
-        // this.label.style.textAlign = 'center'
         this.label.style.color = 'white'
+        this.label.style.textShadow = '8px 8px 8px rgba(0, 0, 0, 0.5)'
         this.label.style.fontSize = '25px'
-        this.label.style.fontWeight = '800'
+        this.label.style.fontWeight = '500'
 
         this.label.style.padding = '25px'
 

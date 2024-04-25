@@ -27,7 +27,7 @@ class StepSquare {
 
         this.oneStepSquare = document.createElement('div');
         this.oneStepSquare.style.position = "absolute"
-        this.oneStepSquare.style.backgroundColor = '#0097B2'
+        this.oneStepSquare.style.backgroundColor = '#392F69'
         this.oneStepSquare.style.backgroundImage = `url(${this.backgroundImage})`
         this.oneStepSquare.style.backgroundSize = "60%"
         this.oneStepSquare.style.backgroundPosition = "center"

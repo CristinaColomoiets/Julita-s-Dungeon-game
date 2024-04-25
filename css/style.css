@@ -18,5 +18,36 @@
 
 #controls {
     /* background-color: green; */
+}
+
+
+.winner {
+    width: 600px;
+    height: 800px;
+    background-image: url(../img/win1.png);
+    /* background-color: black; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 2rem;
+    left: 600px;
+    z-index: 14;
+    display: none;
+}
+
+.loser {
+    background-image: url(../img/lose1.png);
+    width: 600px;
+    height: 800px;
+    /* background-color: black; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 2rem;
+    left: 600px;
+    z-index: 14;
+    display: none;
 
 }

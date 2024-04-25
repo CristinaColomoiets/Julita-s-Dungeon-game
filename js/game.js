@@ -23,17 +23,23 @@ const Game = {
     },
 
     setGameScreenSize() {
-        document.querySelector('#controls').style.width = '20%'
-        this.gameScreen.style.width = `${this.gameSize.w}px`   //css properties to take into account
+        document.querySelector('#controls').style.width = '30%'
+        this.gameScreen.style.width = `${this.gameSize.w}px`
         this.gameScreen.style.height = `${this.gameSize.h}px`
     },
 
     createElements() {
         this.player = new Player(this.gameSize, this.gameScreen, 118, 280)
-        this.dice = new Dice(this.gameSize, this.gameScreen, 120, 550)
+        this.dice = new Dice(this.gameSize, this.gameScreen, 185, 550)
         this.createSquares()
-        this.createBar()
-        this.clueLabel = new ClueLabel(this.gameSize, this.gameScreen, 50, 200)
+        this.healthBar = new BarStats(this.gameSize, this.gameScreen, "health", "#316C5D", 610)
+        this.manaBar = new BarStats(this.gameSize, this.gameScreen, "mana", "#8085CA", 650)
+        this.clueLabel = new ClueLabel(this.gameSize, this.gameScreen, 50, 270)
+        this.icon = new Icon(this.gameSize, this.gameScreen, 115, 28)
+        this.winner = document.querySelector('.winner');
+        this.loser = document.querySelector('.loser');
+        // this.titleHealthBar = new TitleBar(this.gameSize, this.gameScreen, 610, 'Health')
+        // this.titleManaBar = new TitleBar(this.gameSize, this.gameScreen, 650, 'Mana')
     },
 
     setEventListeners() {
@@ -47,53 +53,68 @@ const Game = {
 
                 if (this.targetSquare.typeSquare === "moveTwo") {
                     this.currentSquareNumber -= 2
-                    this.clueLabel.showMessage('mueve dos casillas')
+                    this.clueLabel.showMessage('Has sido atrapado en el agujero negro, por eso pierdes dos pasos')
                 }
 
                 if (this.targetSquare.typeSquare === "monster") {
                     this.attackMode = true
-                    this.clueLabel.showMessage('El monstruo te acaba de quitar 3 de vida, debes tirar el dado para luchar con él')
+                    this.clueLabel.showMessage('El monstruo te acaba de quitar 3 puntos de vida, tira el dado para luchar contra él')
+                    // BARRA
+                    this.healthBar.updateBar(this.dice.currentNum + 6)
+                    if (this.healthBar.currentWidth === 0) {
+                        this.clueLabel.showMessage('No puedes ni arrastrarte. Has muerto')
+                        this.loser.style.display = 'block'
+                    }
+                    console.log(this.healthBar)
                 }
 
             } else {
                 this.dice.generateRandomDice()
+                this.manaBar.updateBar(this.dice.currentNum + 1)
 
                 if (this.dice.currentNum + 1 >= 4) {
-                    //alert('el monstruo ha muerto')
-                    console.log('El monstruo está muerto. le has matado con número: ', this.dice.currentNum + 1)
+                    this.clueLabel.showMessage(`¡El monstruo está muerto! Le has matado con el número:  ${this.dice.currentNum + 1}`)
                     this.attackMode = false
                 } else {
                     console.log('El monstruo está ALIVE', this.dice.currentNum + 1)
-                    this.clueLabel.showMessage('No está muerto todavía, sigue tirando porfavor')
+                    this.clueLabel.showMessage(`Con el número ${this.dice.currentNum + 1} no le haces ni caricias. Sigue tirando, ¡que te mueres!`)
                 }
             }
 
-            if (this.targetSquare.typeSquare === "finalBoss") { // La casilla del BOSS final
-                this.attackMode = true
-                if (this.dice.currentNum + 1 >= 6) {
-                    this.clueLabel.showMessage(`El BOSS está muerto. le has matado con número:',
-                    ${this.dice.currentNum + 1}, youwin`)
-                } else if (this.dice.currentNum + 1 === 1) {
-                    //alert('pazdescanse Julita')
-                    this.clueLabel.showMessage('Pazdescanse Julita, lo siento')
-                } else {
-                    console.log('El BOSS sigue ALIVE', this.dice.currentNum + 1)
-                    this.clueLabel.showMessage('No está muerto todavía, sigue tirando porfavor')
-                }
+            if (this.targetSquare.typeSquare === 'rip') {
+                this.clueLabel.showMessage('¡Caiste en la tumba!')
+                this.loser.style.display = 'block'
             }
 
-            this.updateStats()
+            // if (this.healthBar.barSize.w === 50) {
+            //     this.clueLabel.showMessage('No puedes ni arrastrarte. Has muerto')
+            //     this.loser.style.display = 'block'
         }
-    },
 
+        if (this.targetSquare.typeSquare === "mana") {
+            this.manaBar.updateMana()
+            console.log('Es barra de mana: ', this.manaBar)
+        }
 
-    updateStats() {
+        if (this.targetSquare.typeSquare === "health") {
+            this.healthBar.updateMana()
+            console.log('Es barra de vida: ', this.manaBar)
+        }
+
         if (this.targetSquare.typeSquare === "finalBoss") { // La casilla del BOSS final
+            this.attackMode = true
             if (this.dice.currentNum + 1 >= 6) {
-                this.clueLabel.showMessage(`El BOSS está muerto. le has matado con número:', ${this.dice.currentNum + 1}, youwin`)
+                this.clueLabel.showMessage(`El BOSS está muerto. Le has matado con el número:${this.dice.currentNum + 1}`)
+                //WINNER FLAG
+                this.winner.style.display = 'block'
+            } else if (this.dice.currentNum + 1 === 1) {
+                //LOSER FLAG
+                this.clueLabel.showMessage(`El BOSS te ha matado, has sacado el número ${this.dice.currentNum + 1}`)
+                this.loser.style.display = 'block'
+
             } else {
-                console.log('El BOSS sigue ALIVE', this.dice.currentNum + 1)
-                this.clueLabel.showMessage('No está muerto todavía, sigue tirando porfavor')
+                console.log('El BOSS sigue pegándote', this.dice.currentNum + 1)
+                this.clueLabel.showMessage('No está muerto todavía. Sigue tirando, ¡que te mueres!')
             }
         }
     },
@@ -109,20 +130,8 @@ const Game = {
         } else if (((this.currentSquareNumber + 1) + this.dice.currentNum) > (this.arrSquaresPath.length - 2)) {
             this.currentSquareNumber = this.arrSquaresPath.length - 2
             this.targetSquare = this.arrSquaresPath[this.arrSquaresPath.length - 2]
-
         }
         this.player.moveToSquare(this.targetSquare)
-
-    },
-
-    createBar() {
-        this.healthBar = new BarStats(this.gameSize, this.gameScreen, "health", "#7ED957", 610)
-        this.manaBar = new BarStats(this.gameSize, this.gameScreen, "mana", "#8EE3FF", 650)
-    },
-
-    createEndGAme() {
-        this.winner = new EndScreen(this.gameSize, this.gameScreen)
-        this.loser = new EndScreen(this.gameSize, this.gameScreen)
     },
 
     createSquares() {
@@ -244,4 +253,5 @@ const Game = {
             stepSquare51
         ]
     }
+
 }

@@ -45,11 +45,9 @@ class Player {
     updatePosition(positionL, positionT) {
         this.playerOne.style.left = `${positionL}px`
         this.playerOne.style.top = `${positionT}px`
-
     }
 
     moveToSquare(targetSquare) {
-        
-        // console.log('DEBEMOS MOVERLA A ESTE SQUARE', targetSquare)
+
     }
 }

@@ -5,25 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" sizes="32x32" href="./img/julitaIcon.png">
     <title>Julita's Dungeon</title>
 </head>
 
 <body>
+
     <!-- <div id="start-screen"></div> -->
     <figure id="game-screen">
-        <div id="controls"></div>
+        <div id="controls">
+            <audio src="./16-Bit Fantasy RPG - Castle Music_jmayjjbARu4.mp3" autoplay loop></audio>
+        </div>
         <div id="panel"></div>
     </figure>
-    <!-- <div id="end-game"></div> -->
+    <div id="end-game">
+        <div class="winner"></div>
+        <div class="loser"></div>
+    </div>
 
 
     <script src="./js/dice.js"></script>
     <script src="./js/player.js"></script>
     <script src="./js/stepSquare.js"></script>
     <script src="./js/game.js"></script>
-    <script src="./js/index.js"></script>
     <script src="./js/barStats.js"></script>
     <script src="./js/clueLabel.js"></script>
+    <script src="./js/icon.js"></script>
+    <!-- <script src="./js/titleBar.js"></script> -->
+    <script src="./js/index.js"></script>
+
+
     <!-- <script src="./js/clueLabel.js"></script> -->
 
 </body>
