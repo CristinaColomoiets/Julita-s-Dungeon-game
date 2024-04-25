@@ -6,7 +6,7 @@ const Game = {
         h: window.innerHeight,
     },
 
-    //speedPlayerCounter: 0, 
+    //speedPlayerCounter: 0,
     dice: undefined,
     player: undefined,
     arrSquaresPath: undefined,
@@ -38,8 +38,8 @@ const Game = {
         this.icon = new Icon(this.gameSize, this.gameScreen, 115, 28)
         this.winner = document.querySelector('.winner');
         this.loser = document.querySelector('.loser');
-        // this.titleHealthBar = new TitleBar(this.gameSize, this.gameScreen, 610, 'Health')
-        // this.titleManaBar = new TitleBar(this.gameSize, this.gameScreen, 650, 'Mana')
+        this.titleHealthBar = new TitleBar(this.gameSize, this.gameScreen, 610, 'HEALTH')
+        this.titleManaBar = new TitleBar(this.gameSize, this.gameScreen, 650, 'MANA')
     },
 
     setEventListeners() {
@@ -65,7 +65,7 @@ const Game = {
                         this.clueLabel.showMessage('No puedes ni arrastrarte. Has muerto')
                         this.loser.style.display = 'block'
                     }
-                    console.log(this.healthBar)
+                    // console.log(this.healthBar)
                 }
 
             } else {

@@ -6,16 +6,15 @@ class TitleBar {
         this.gameScreen = gameScreen
 
         this.titleSize = {
-            w: 40,
-            h: 20
+            w: 100,
         }
 
         this.titlePos = {
-            left: 200,
+            left: 150,
             top: top,
         }
 
-        this.titleTxt = txt
+        this.txt = txt
 
         this.init()
 
@@ -23,22 +22,21 @@ class TitleBar {
 
     init() {
         this.containerTitle = document.createElement('div')
-        this.container.style.backgroundColor = 'red'
+        this.containerTitle.style.backgroundColor = 'green'
         this.containerTitle.style.position = "absolute"
+        this.containerTitle.style.width = `${this.titleSize.w}px`
+
+        this.containerTitle.style.left = `${this.titlePos.left}px`
+        this.containerTitle.style.top = `${this.titlePos.top}px`
 
         this.txtTitle = document.createElement('p')
-        this.txtTitle.innerText = txt
         this.txtTitle.color = 'white'
-        this.txtTitle.fontSize = '20px'
+        this.txtTitle.fontWeight = '600'
         this.txtTitle.style.textShadow = '8px 8px 8px rgba(0, 0, 0, 0.5)'
-        this.txtTitle.style.width = `${this.titleSize.w}px`
-        this.txtTitle.style.height = `${this.titleSize.h}px`
-        this.txtTitle.style.left = `${this.titlePos.left}px`
-        this.txtTitle.style.top = `${this.titlePos.top}px`
         this.txtTitle.style.zIndex = "14"
+        this.txtTitle.innerText = this.txt
 
-        this.container.appendChild(txtTitle)
-
+        this.containerTitle.appendChild(this.txtTitle)
 
         document.querySelector('#panel').appendChild(this.containerTitle)
     }
