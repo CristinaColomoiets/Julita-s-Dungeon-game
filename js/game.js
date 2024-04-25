@@ -120,10 +120,10 @@ const Game = {
         this.manaBar = new BarStats(this.gameSize, this.gameScreen, "mana", "#8EE3FF", 650)
     },
 
-    // createEndGAme() {
-    //     this.winner =
-    //         this.loser = 
-    // },
+    createEndGAme() {
+        this.winner = new EndScreen(this.gameSize, this.gameScreen)
+        this.loser = new EndScreen(this.gameSize, this.gameScreen)
+    },
 
     createSquares() {
 

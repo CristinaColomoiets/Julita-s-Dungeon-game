@@ -1,6 +1,6 @@
 class endScreen {
 
-    constructor(gameSize, gameScreen, leftValue, topValue) {
+    constructor(gameSize, gameScreen) {
 
         this.gameSize = gameSize
         this.gameScreen = gameScreen
@@ -11,9 +11,11 @@ class endScreen {
         }
 
         this.endPos = {
-            left: leftValue,
-            top: topValue
+            left: 400,
+            top: 350
         }
+
+        this.backgroundImage = backgroundImage
 
         this.init()
     }
@@ -21,21 +23,20 @@ class endScreen {
 
     init() {
 
-        this.oneStepSquare = document.createElement('div');
-        this.oneStepSquare.style.position = "absolute"
-        this.oneStepSquare.style.backgroundColor = '#0097B2'
-        this.oneStepSquare.style.backgroundImage = `url(${this.backgroundImage})`
-        this.oneStepSquare.style.backgroundSize = "60%"
-        this.oneStepSquare.style.backgroundPosition = "center"
-        this.oneStepSquare.style.backgroundRepeat = "no-repeat"
-        this.oneStepSquare.style.borderRadius = `5px`
+        this.endScreen = document.createElement('div');
+        this.endScreen.style.position = "absolute"
+        this.endScreen.style.backgroundColor = '#0097B2'
+        this.endScreen.style.backgroundImage = `url(${this.backgroundImage})`
+        //this.oneStepSquare.style.backgroundSize = ""
+        this.endScreen.style.backgroundPosition = "center"
+        this.endScreen.style.backgroundRepeat = "no-repeat"
 
-        this.oneStepSquare.style.width = `${this.stepSquareSize.w}px`
-        this.oneStepSquare.style.height = `${this.stepSquareSize.h}px`
-        this.oneStepSquare.style.left = `${this.stepSquarePos.left}px`
-        this.oneStepSquare.style.top = `${this.stepSquarePos.top}px`
-        this.oneStepSquare.style.zIndex = "10"
+        this.endScreen.style.width = `${this.stepSquareSize.w}px`
+        this.endScreen.style.height = `${this.stepSquareSize.h}px`
+        this.endScreen.style.left = `${this.stepSquarePos.left}px`
+        this.endScreen.style.top = `${this.stepSquarePos.top}px`
+        this.endScreen.style.zIndex = "14"
 
-        document.querySelector('#controls').appendChild(this.diceOne)
+        document.querySelector('#panel').appendChild(this.diceOne)
     }
 }
