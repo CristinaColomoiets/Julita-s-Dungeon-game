@@ -21,8 +21,6 @@ class BarStats {
 
         this.currentWidth = 60
 
-        // this.titleBar = titleBar
-
         this.init()
 
     }

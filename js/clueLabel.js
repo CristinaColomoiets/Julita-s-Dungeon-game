@@ -15,7 +15,7 @@ class ClueLabel {
             top: topValue
         }
 
-        this.labelImage = '../img/parchment.png'
+        this.labelImage = './../img/parchment.png'
 
         this.init()
     }

@@ -15,7 +15,7 @@ class Icon {
             top: topValue
         }
 
-        this.iconImage = '../img/julita.png'
+        this.iconImage = './../img/julita.png'
 
         this.init()
     }

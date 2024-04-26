@@ -22,7 +22,6 @@ class TitleBar {
 
     init() {
         this.containerTitle = document.createElement('div')
-        // this.containerTitle.style.backgroundColor = 'green'
         this.containerTitle.style.position = "absolute"
         this.containerTitle.style.width = `${this.titleSize.w}px`
 

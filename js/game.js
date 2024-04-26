@@ -65,7 +65,6 @@ const Game = {
                         this.clueLabel.showMessage('No puedes ni arrastrarte. Has muerto')
                         this.loser.style.display = 'block'
                     }
-                    // console.log(this.healthBar)
                 }
 
             } else {
@@ -103,12 +102,13 @@ const Game = {
                 this.clueLabel.showMessage('Sigue tirando para avanzar')
             }
 
-            if (this.targetSquare.typeSquare === "finalBoss") { // La casilla del BOSS final
+            // La casilla del BOSS final
+            if (this.targetSquare.typeSquare === "finalBoss") {
                 this.attackMode = true
                 if (this.dice.currentNum + 1 >= 6) {
                     this.clueLabel.showMessage(`El BOSS está muerto. Le has matado con el número:${this.dice.currentNum + 1}`)
-                    this.winner.style.display = 'block'
                     //WINNER FLAG                    
+                    this.winner.style.display = 'block'
                 } else if (this.dice.currentNum + 1 === 1) {
                     //LOSER FLAG
                     this.clueLabel.showMessage(`El BOSS te ha matado, has sacado el número ${this.dice.currentNum + 1}`)

@@ -41,6 +41,6 @@ class StepSquare {
         this.oneStepSquare.style.zIndex = "10"
 
 
-        document.querySelector('#panel').appendChild(this.oneStepSquare) // Preguntar como podemos pasar la variable 'gameScreen'.
+        document.querySelector('#panel').appendChild(this.oneStepSquare)
     }
 }
