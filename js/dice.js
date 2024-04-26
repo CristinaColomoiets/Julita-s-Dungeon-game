@@ -45,6 +45,6 @@ class Dice {
     }
 
     updateImage() {
-        this.diceOne.style.backgroundImage = `url(../img/diceImages/dice${this.currentNum + 1}.png)`
+        this.diceOne.style.backgroundImage = `url(./../img/diceImages/dice${this.currentNum + 1}.png)`
     }
 }
