@@ -22,7 +22,7 @@ class TitleBar {
 
     init() {
         this.containerTitle = document.createElement('div')
-        this.containerTitle.style.backgroundColor = 'green'
+        // this.containerTitle.style.backgroundColor = 'green'
         this.containerTitle.style.position = "absolute"
         this.containerTitle.style.width = `${this.titleSize.w}px`
 
@@ -30,8 +30,9 @@ class TitleBar {
         this.containerTitle.style.top = `${this.titlePos.top}px`
 
         this.txtTitle = document.createElement('p')
-        this.txtTitle.color = 'white'
-        this.txtTitle.fontWeight = '600'
+        this.txtTitle.style.color = 'white'
+        this.txtTitle.style.fontWeight = '300'
+        this.txtTitle.style.fontSize = '20px'
         this.txtTitle.style.textShadow = '8px 8px 8px rgba(0, 0, 0, 0.5)'
         this.txtTitle.style.zIndex = "14"
         this.txtTitle.innerText = this.txt

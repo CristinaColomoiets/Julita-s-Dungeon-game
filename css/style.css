@@ -1,7 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Jersey 15', sans-serif;
 }
+
+@font-face {
+    font-family: 'Jersey 15';
+    src: url('../fonts/Jersey_15/Jersey15-Regular.ttf') format('truetype');
+}
+
 
 
 #game-screen {
@@ -13,11 +20,6 @@
 #panel {
     position: relative;
     overflow: hidden;
-    /* background-color: rgb(30, 2, 2); */
-}
-
-#controls {
-    /* background-color: green; */
 }
 
 
@@ -25,7 +27,6 @@
     width: 600px;
     height: 800px;
     background-image: url(../img/win1.png);
-    /* background-color: black; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -40,7 +41,6 @@
     background-image: url(../img/lose1.png);
     width: 600px;
     height: 800px;
-    /* background-color: black; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
