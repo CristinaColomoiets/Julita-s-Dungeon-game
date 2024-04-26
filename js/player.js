@@ -15,7 +15,7 @@ class Player {
             top: topValue,
         }
 
-        this.playerImg = "./../img/Julita.gif"
+        this.playerImg = "img/Julita.gif"
 
         this.init()
 

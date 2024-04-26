@@ -26,7 +26,7 @@ class Dice {
         this.diceOne = document.createElement('div')
         this.diceOne.id = "dice"
         this.diceOne.style.position = "absolute"
-        this.diceOne.style.backgroundImage = `url(./../img/diceImages/dice${this.currentNum + 1}.png)`
+        this.diceOne.style.backgroundImage = `url(img/diceImages/dice${this.currentNum + 1}.png)`
         this.diceOne.style.backgroundSize = "cover"
         this.diceOne.style.backgroundPosition = "center"
         this.diceOne.style.backgroundRepeat = "no-repeat"
@@ -45,6 +45,6 @@ class Dice {
     }
 
     updateImage() {
-        this.diceOne.style.backgroundImage = `url(./../img/diceImages/dice${this.currentNum + 1}.png)`
+        this.diceOne.style.backgroundImage = `url(img/diceImages/dice${this.currentNum + 1}.png)`
     }
 }
